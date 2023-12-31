@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +8,19 @@
     <link rel="icon" type="image/gif" href="https://s13.gifyu.com/images/SjEZK.gif">
     <style>
         body {
-            background-color: #111;
-            color: #fff;
-            font-family: 'Axiforma-Regular', sans-serif;
             margin: 0;
+            overflow: hidden;
+            font-family: 'Axiforma-Regular', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
-        }
-
-        @font-face {
-            font-family: 'Axiforma-Regular';
-            src: url('path/to/Axiforma-Regular.ttf') format('truetype'); /* Укажите путь к файлу .ttf */
-            font-weight: normal;
-            font-style: normal;
+            background-color: #111;
+            color: #fff;
         }
 
         .container {
+            position: relative;
             text-align: left;
             padding: 20px;
             border: 2px solid rgba(255, 255, 255, 0.7);
@@ -32,7 +28,6 @@
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
             background-color: rgba(0, 0, 0, 0.5);
             width: 80%;
-            font-family: 'Axiforma-Regular', sans-serif;
         }
 
         .link {
@@ -45,10 +40,18 @@
         .link:hover {
             color: #fff;
         }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Axiforma:wght@300&display=swap">
 </head>
+
 <body>
+    <div id="particles-js"></div>
     <div class="container">
         <p>Для начала вам нужно скачать лаунчер кликнув <span class="link" onclick="openSite('https://llaun.ch/ru')">сюда</span>.</p>
         <p>После вы должны скачать сам клиент кликнув <span class="link" onclick="openSite('https://lavaware.download')">сюда</span>.</p>
@@ -57,10 +60,117 @@
         <p>Теперь ваши боты обходят любую капчу кроме framed также посмотреть баланс .bots bal.</p>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         function openSite(url) {
             window.open(url, '_blank');
         }
+
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#ffffff'
+                },
+                shape: {
+                    type: 'circle',
+                    stroke: {
+                        width: 0,
+                        color: '#000000'
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
     </script>
 </body>
 </html>
