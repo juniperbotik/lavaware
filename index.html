@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LavaWare.client</title>
+    <style>
+        body {
+            background-color: #333; /* Темно-серый фон */
+            color: #fff; /* Белый текст */
+            font-family: Arial, sans-serif; /* Простой шрифт */
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 50px;
+            border: 2px solid #fff; /* Белая рамка */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Тень */
+        }
+
+        .link {
+            text-decoration: underline;
+            font-weight: bold;
+            color: #00f; /* Синий цвет для подчеркнутого текста */
+            cursor: pointer;
+        }
+
+        .link:hover {
+            color: #0f0; /* Зеленый цвет при наведении */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>Для начала вам нужно скачать лаунчер кликнув <span class="link" onclick="openSite('https://llaun.ch/ru')">сюда</span>.</p>
+        <p>После вы должны скачать сам клиент кликнув <span class="link" onclick="openSite('https://lavaware.download')">сюда</span>.</p>
+    </div>
+
+    <script>
+        function openSite(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
