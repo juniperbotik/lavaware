@@ -43,6 +43,7 @@
                         0 0 10px rgba(255, 255, 255, 0.5);
             background-color: rgba(0, 0, 0, 0.5);
             width: 80%;
+            display: none;
         }
 
         .link {
@@ -84,6 +85,26 @@
             opacity: 0;
             animation: fadeIn 2s ease-in-out forwards;
         }
+
+        /* Menu styles */
+        .menu {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .menu-button {
+            background-color: #ff9696;
+            padding: 8px;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Axiforma:wght@300&display=swap">
 </head>
@@ -112,10 +133,19 @@
         <p>.bots drop - боты выкидывают весь инвентарь</p>
         <p>.bots send (сообщение) - боты отправляют сообщение</p>
     </div>
+    <div class="menu">
+        <button class="menu-button" onclick="openSite('https://discord.gg/TArBtJDSHY')">Discord</button>
+        <button class="menu-button" onclick="toggleVisibility()">Client</button>
+    </div>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         function openSite(url) {
             window.open(url, '_blank');
+        }
+
+        function toggleVisibility() {
+            var container = document.querySelector('.container');
+            container.style.display = (container.style.display === 'none' || container.style.display === '') ? 'block' : 'none';
         }
 
         particlesJS('particles-js', {
@@ -151,7 +181,7 @@
                     }
                 },
                 size: {
-                    value: 2, /* Меньший размер частиц */
+                    value: 2,
                     random: true,
                     anim: {
                         enable: false,
