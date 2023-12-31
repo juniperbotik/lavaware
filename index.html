@@ -16,9 +16,22 @@
             height: 100vh;
         }
 
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            padding: 20px;
+        }
+
+        #logo {
+            width: 50px;
+            height: 50px;
+        }
+
         .container {
             text-align: left;
-            padding: 50px;
+            padding: 20px;
             border: 2px solid rgba(255, 255, 255, 0.7);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
@@ -36,38 +49,16 @@
         .link:hover {
             color: #fff;
         }
-
-        #logo {
-            width: 50px;
-            height: 50px;
-        }
-
-        #title {
-            position: relative;
-        }
-
-        @keyframes titleAnimation {
-            0%, 20%, 50%, 80%, 100% {
-                transform: scaleY(1);
-            }
-            40%, 60% {
-                transform: scaleY(0);
-            }
-        }
-
-        #logo {
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Axiforma:wght@300&display=swap">
 </head>
 <body>
+    <div class="header">
+        <img id="logo" src="https://s13.gifyu.com/images/SjEZK.gif">
+        <h1>LavaWare.client</h1>
+    </div>
+    
     <div class="container">
-        <h1 id="title">LavaWare.client<img id="logo" src="https://s13.gifyu.com/images/SjEZK.gif" alt="LavaWare Logo"></h1>
         <p>Для начала вам нужно скачать лаунчер кликнув <span class="link" onclick="openSite('https://llaun.ch/ru')">сюда</span>.</p>
         <p>После вы должны скачать сам клиент кликнув <span class="link" onclick="openSite('https://lavaware.download')">сюда</span>.</p>
     </div>
