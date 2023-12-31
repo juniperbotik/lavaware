@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,19 @@
             height: 100vh;
             background-color: #111;
             color: #fff;
+            position: relative;
+        }
+
+        ::before {
+            content: 'LavaWare';
+            font-family: 'Axiforma-Regular', sans-serif;
+            font-size: 5em;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.2); /* Цвет надписи (темный) */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .container {
@@ -24,8 +38,8 @@
             padding: 20px;
             border: 2px solid rgba(255, 255, 255, 0.7);
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), /* Больший эффект glow */
-                        0 0 10px rgba(255, 255, 255, 0.5); /* Подсветка белым цветом */
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8),
+                        0 0 10px rgba(255, 255, 255, 0.5);
             background-color: rgba(0, 0, 0, 0.5);
             width: 80%;
         }
@@ -49,6 +63,7 @@
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Axiforma:wght@300&display=swap">
 </head>
+
 <body>
     <div id="particles-js"></div>
     <div class="container">
