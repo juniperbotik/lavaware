@@ -21,11 +21,11 @@
         }
 
         ::before {
-            content: 'LavaWare';
+            content: '';
             font-family: 'Axiforma-Regular', sans-serif;
             font-size: 5em;
             font-weight: bold;
-            color: rgba(255, 255, 255, 0.2); /* Цвет надписи (темный) */
+            color: rgba(255, 255, 255, 0.2);
             position: absolute;
             top: 50%;
             left: 50%;
@@ -55,10 +55,33 @@
             color: #fff;
         }
 
+        .corner-text {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 10px;
+            color: #fff;
+            font-size: 14px;
+        }
+
         #particles-js {
             position: absolute;
             width: 100%;
             height: 100%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        body::before {
+            content: 'LavaWare';
+            animation: fadeIn 2s ease-in-out;
         }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Axiforma:wght@300&display=swap">
@@ -69,10 +92,11 @@
     <div class="container">
         <p>Для начала вам нужно скачать лаунчер кликнув <span class="link" onclick="openSite('https://llaun.ch/ru')">сюда</span>.</p>
         <p>После вы должны скачать сам клиент кликнув <span class="link" onclick="openSite('https://lavaware.download')">сюда</span>.</p>
-        <p>Для того чтобы боты обходили капчу вы должны купить капча гуру 5-10 рублей кликнув <span class="link" onclick="openSite('https://lavaware.download')">сюда</span>.</p>
+        <p>Для того чтобы боты обходили капчу вы должны купить капча гуру 5-10 рублей кликнув <span class="link" onclick="openSite('https://cap.guru')">сюда</span>.</p>
         <p>После заходите на нужный сервер пишите .bots api (ваш ключ).</p>
         <p>Теперь ваши боты обходят любую капчу кроме framed также посмотреть баланс .bots bal.</p>
     </div>
+    <div class="corner-text">Запросов: <span id="requestCount">0</span></div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
@@ -113,7 +137,7 @@
                     }
                 },
                 size: {
-                    value: 3,
+                    value: 2, /* Меньший размер частиц */
                     random: true,
                     anim: {
                         enable: false,
@@ -185,6 +209,13 @@
             },
             retina_detect: true
         });
+
+        // Пример обновления количества запросов
+        setInterval(function () {
+            var requestCountElement = document.getElementById('requestCount');
+            var currentCount = parseInt(requestCountElement.innerText) + 1;
+            requestCountElement.innerText = currentCount;
+        }, 5000); // Обновление каждые 5 секунд
     </script>
 </body>
 </html>
