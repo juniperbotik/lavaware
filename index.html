@@ -21,7 +21,7 @@
         }
 
         ::before {
-            content: '';
+            content: 'LavaWare';
             font-family: 'Axiforma-Regular', sans-serif;
             font-size: 5em;
             font-weight: bold;
@@ -30,6 +30,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
         }
 
         .container {
@@ -81,7 +83,7 @@
 
         body::before {
             content: 'LavaWare';
-            animation: fadeIn 2s ease-in-out;
+            animation: fadeIn 2s ease-in-out forwards;
         }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Axiforma:wght@300&display=swap">
