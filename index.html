@@ -112,8 +112,6 @@
         <p>.bots drop - боты выкидывают весь инвентарь</p>
         <p>.bots send (сообщение) - боты отправляют сообщение</p>
     </div>
-    <div class="corner-text">Запросов: <span id="requestCount">0</span></div>
-
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         function openSite(url) {
@@ -225,13 +223,6 @@
             },
             retina_detect: true
         });
-
-        // Пример обновления количества запросов
-        setInterval(function () {
-            var requestCountElement = document.getElementById('requestCount');
-            var currentCount = parseInt(requestCountElement.innerText) + 1;
-            requestCountElement.innerText = currentCount;
-        }, 5000); // Обновление каждые 5 секунд
     </script>
 </body>
 </html>
