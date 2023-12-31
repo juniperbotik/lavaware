@@ -10,17 +10,20 @@
             color: #fff;
             font-family: 'Axiforma-Regular', sans-serif;
             margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Занимаем всю высоту экрана */
         }
 
         .container {
-            width: 80%;
-            margin: 0 auto;
             text-align: left;
             padding: 50px;
             border: 2px solid rgba(255, 255, 255, 0.7);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
             background-color: rgba(0, 0, 0, 0.5);
+            width: 80%;
         }
 
         .link {
@@ -34,13 +37,9 @@
             color: #fff;
         }
 
-        #logo {
-            width: 50px; /* Размер иконки */
-            height: 50px;
-        }
-
         #title {
             animation: titleAnimation 2s infinite;
+            position: relative;
         }
 
         @keyframes titleAnimation {
@@ -51,14 +50,21 @@
                 transform: scaleY(0);
             }
         }
+
+        #logo {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Axiforma:wght@300&display=swap">
 </head>
 
 <body>
     <div class="container">
-        <img id="logo" src="https://s13.gifyu.com/images/SjEZK.gif" alt="LavaWare Logo">
-        <h1 id="title">LavaWare.client</h1>
+        <h1 id="title">LavaWare.client<img id="logo" src="https://s13.gifyu.com/images/SjEZK.gif" alt="LavaWare Logo"></h1>
         <p>Для начала вам нужно скачать лаунчер кликнув <span class="link" onclick="openSite('https://llaun.ch/ru')">сюда</span>.</p>
         <p>После вы должны скачать сам клиент кликнув <span class="link" onclick="openSite('https://lavaware.download')">сюда</span>.</p>
     </div>
