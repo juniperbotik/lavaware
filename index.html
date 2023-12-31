@@ -20,18 +20,17 @@
             position: relative;
         }
 
-        ::before {
-            content: 'LavaWare';
-            font-family: 'Axiforma-Regular', sans-serif;
-            font-size: 5em;
-            font-weight: bold;
-            color: rgba(255, 255, 255, 0.2);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out forwards;
+        .watermark {
+            position: fixed;
+            top: 4px;
+            left: 4px;
+            padding: 4px;
+            color: #fff;
+            font-size: 14px;
+            background-color: rgba(20, 20, 20, 0.8);
+            border: 1px solid #ff9696;
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
         }
 
         .container {
@@ -57,15 +56,6 @@
             color: #fff;
         }
 
-        .corner-text {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            padding: 10px;
-            color: #fff;
-            font-size: 14px;
-        }
-
         #particles-js {
             position: absolute;
             width: 100%;
@@ -83,6 +73,15 @@
 
         body::before {
             content: 'LavaWare';
+            font-family: 'Axiforma-Regular', sans-serif;
+            font-size: 5em;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
             animation: fadeIn 2s ease-in-out forwards;
         }
     </style>
@@ -91,6 +90,7 @@
 
 <body>
     <div id="particles-js"></div>
+    <div class="watermark">LavaWare</div>
     <div class="container">
         <p>Для начала вам нужно скачать лаунчер кликнув <span class="link" onclick="openSite('https://llaun.ch/ru')">сюда</span>.</p>
         <p>После вы должны скачать сам клиент кликнув <span class="link" onclick="openSite('https://lavaware.download')">сюда</span>.</p>
